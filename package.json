@@ -1,5 +1,5 @@
 {
-  "name": "react-parcel",
+  "name": "random-group-denerator",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SanDiegoCodeSchool/react-parcel.git"
+    "url": "git+https://github.com/hank-frank/random-group.git"
   },
-  "author": "",
+  "author": "Henry!",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/SanDiegoCodeSchool/react-parcel/issues"
+    "url": "https://github.com/hank-frank/random-group/issues"
   },
-  "homepage": "https://github.com/SanDiegoCodeSchool/react-parcel#readme",
+  "homepage": "https://github.com/hank-frank/random-group#readme",
   "dependencies": {
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
