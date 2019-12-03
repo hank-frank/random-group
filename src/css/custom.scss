@@ -1,3 +1,247 @@
-.red {
-    color: red;
+$warm: #383735;
+$blue: #3847b8;
+$grey: #c5cad6;
+
+$tiny: 380px;
+$wrap-break: 768px;
+
+@mixin mobile {
+    @media (max-width: $wrap-break) {
+        @content;
+    }
+}
+
+@mixin tiny {
+    @media (max-width: $tiny) {
+        @content;
+    }
+}
+
+body {
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    background-color: $grey;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@mixin horizontal-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+@mixin vertical-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.centered-horizontal {
+    @include horizontal-center;
+}
+
+.centered-vertical {
+    @include vertical-center;
+    @include mobile {
+        width: 80%;
+    }
+}
+
+/////////////////////////////////////////////////////////////
+//////      Header
+/////////////////////////////////////////////////////////////
+
+.header-container {
+    @include horizontal-center;
+    background-color: $warm;
+    color: $grey;
+}
+
+.header-item {
+    margin: 1vh 2vw;
+    font-size: 1rem;
+    text-decoration: none;
+    color: $grey;
+}
+
+.header-item:hover {
+    color: $blue;
+}
+/////////////////////////////////////////////////////////////
+//////      Input
+/////////////////////////////////////////////////////////////
+
+.input-header-flex {
+    @include horizontal-center;
+    color: $warm;
+    font-size: 2rem;
+
+    @include mobile {
+        font-size: 1rem;
+    }
+}
+
+.input-header {
+    color: $blue;
+}
+
+.input-page-text {
+    font-size: 1rem;
+    text-align: center;
+}
+
+.input-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.search-label {
+    color: $blue;
+    margin: 2vh 0;
+    text-align: center;
+}
+
+.search-bar {
+    border: none;
+    margin: 0 1vw;
+    background-color: $grey;
+    border-bottom: 2px $warm solid;
+    width: 50vw;
+}
+
+.submit-button {
+    border: none;
+    background-color: $blue;
+    color: $grey;
+    font-size: 1.5rem;
+    padding: 3vh 3vw;
+}
+
+/////////////////////////////////////////////////////////////
+//////      Success
+/////////////////////////////////////////////////////////////
+
+.success-header {
+    color: $blue;
+}
+
+.success-text {
+    font-size: 1rem;
+    color: $warm;
+}
+
+.success-link {
+    text-decoration: none;
+    cursor: pointer;
+    color: blue;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 40vw;
+    margin: 2vh 0;
+}
+
+thead {
+    background-color: $blue;
+    color: $grey;
+    padding: 1vh 1vw;
+    font-size: 1.5rem;
+}
+
+tbody > tr {
+    background-color: #4e4e63;
+    color: $grey; 
+}
+
+tr:nth-child(even){
+    background-color: $warm;
+    color: $grey;
+}
+
+td {
+    padding: 1vh 1vw; 
+}
+
+/////////////////////////////////////////////////////////////
+//////      Admin
+/////////////////////////////////////////////////////////////
+
+.delete-students {
+    border: none;
+    color: $grey;
+    background-color: $blue;
+    padding: 1vh 1vw;
+    margin: 1vh 1vw;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 17px;
+    margin-bottom: 1vh;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $warm;
+    -webkit-transition: .2s;
+    transition: .2s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 13px;
+    width: 13px;
+    left: 2px;
+    bottom: 2px;
+    background-color: $grey;
+    -webkit-transition: .2s;
+    transition: .2s;
+}
+
+input:checked + .slider {
+    background-color: $blue;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px $blue;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(13px);
+    -ms-transform: translateX(13px);
+    transform: translateX(13px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.time {
+    color: $warm;
+    font-size: 1rem;
 }

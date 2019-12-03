@@ -29,3 +29,14 @@ You will also need to modify the `server/server.js` file to make your call to yo
 
 An example of a request to a mock server is shown in the file. You will replace this with the API you want data from.
 
+##.env is populated like this: 
+
+```
+GROUP_1_URL="https://www.google.com"
+GROUP_2_URL="https://www.google.com"
+GROUP_3_URL="https://www.google.com"
+GROUP_4_URL="https://www.google.com"
+ADMIN_PASSWORD="some password"
+```
+
+where "https://www.google.com" is replaced with the group url and "some Password is whatever you want the admin password to be. 
